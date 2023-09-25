@@ -106,4 +106,9 @@ header{
     height: 80%;
     margin-top: 10px;
     margin-left: 10px;
+    transition: all;
+    transition-duration: .5s;
+}
+#dc-logo:hover, #gr-logo:hover, #yt-logo:hover{
+    height:100%
 }

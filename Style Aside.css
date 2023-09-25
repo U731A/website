@@ -1,0 +1,11 @@
+aside{
+    height: 100vh;
+    width: 3vw;
+    background-color: white;
+
+    transition: all;
+    transition-duration: .5s;
+}
+aside:hover{
+    width: 15vw;
+}
