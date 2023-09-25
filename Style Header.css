@@ -1,0 +1,109 @@
+header{
+    background-color: rgb(113, 113, 113);
+    display: grid;
+    grid-template-columns: 80px 70vw 1fr;
+    grid-template-rows: 80px;
+    box-shadow: 0px 0px 10px black;
+    position: fixed;
+    width: 100vw;
+}
+.flower-icon{
+    grid-column-start: 1;
+    grid-row-start: 1;
+
+    display: grid;
+}
+#flower-icon{
+    max-width: 100%;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 1;
+}
+#flower-frame{
+    --opacity: 25%;
+    max-width: 100%;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 2;
+
+    animation: rotation 5s linear 0s infinite forwards;
+
+    transition: all;
+    transition-duration: 1s;
+}
+#flower-frame:hover{
+    animation: rotation 2s linear 0s infinite forwards;
+}
+#flower-bg{
+    max-width: 100%;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    opacity: var(opacity);
+
+    transition: all;
+    transition-duration: 1s;
+}
+@keyframes rotation{
+
+    0%
+    {
+        rotate: 0deg;
+    }
+    100%
+    {
+        rotate: 360deg;
+    }
+}
+#banner{
+    height: 100%;
+    width: 100vw;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    
+}
+
+#page-title{
+    font-family: 'Dela Gothic One', cursive;
+    text-shadow: 0px 0px 10px black;
+    font-size: 3em;
+    margin: 0;
+    margin-left: 10px;
+
+    animation: hueShift 5s linear 0s infinite forwards;
+}
+@keyframes hueShift{
+    0%
+    {
+        color: white;
+    }
+    25%
+    {
+        color:rgb(255, 210, 252);
+    }
+    50%
+    {
+        color:rgb(220, 255, 250);
+    }
+    75%
+    {
+        color: rgb(229, 255, 215);
+    }
+    100%
+    {
+        color: white;
+    }
+}
+
+.socials{
+    max-height: 100%;
+    grid-column-start: 3;
+    margin-right: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+.socials * {
+    height: 80%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
