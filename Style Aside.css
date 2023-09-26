@@ -2,7 +2,7 @@ aside{
     top: 80px;
     height: calc(100vh - 80px);
     width: 15vw;
-    background-color: white;
+    background-image: linear-gradient(to bottom, white, white, rgb(26, 26, 26));
     position: fixed;
     z-index: 0;
 
@@ -31,4 +31,5 @@ aside:hover{
 
 #tutorials-tab:hover, #assets-tab:hover, #documentation-tab:hover, #other-tab:hover{
     border-radius: 0px;
+    background-color: rgb(35, 35, 35);
 }
