@@ -9,6 +9,8 @@ aside{
     transform: translateX(-12vw);
     transition: all;
     transition-duration: .5s;
+
+    container-type: inline-size;
 }
 aside:hover{
     transform: translateX(0vw);
@@ -27,6 +29,19 @@ aside:hover{
 
     transition: all;
     transition-duration: .5s;
+}
+
+@media screen and (max-width: 800px) {
+
+    #tutorials-tab, #assets-tab, #documentation-tab, #other-tab{
+        transform: translateX(-10vw);
+    }
+    #tutorials-tab:hover, #assets-tab:hover, #documentation-tab:hover, #other-tab:hover{
+        transform: translateX(0vw);
+    }
+    #documentation-tab{
+        font-size: 3vw;
+    }
 }
 
 #tutorials-tab:hover, #assets-tab:hover, #documentation-tab:hover, #other-tab:hover{
