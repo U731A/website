@@ -1,11 +1,34 @@
 aside{
-    height: 100vh;
-    width: 3vw;
+    top: 80px;
+    height: calc(100vh - 80px);
+    width: 15vw;
     background-color: white;
+    position: fixed;
+    z-index: 0;
 
+    transform: translateX(-12vw);
     transition: all;
     transition-duration: .5s;
 }
 aside:hover{
-    width: 15vw;
+    transform: translateX(0vw);
+}
+
+#tutorials-tab, #assets-tab, #documentation-tab, #other-tab{
+    height: 45px;
+    border: 2px solid white;
+    color: white;
+    background-color: black;
+    box-shadow: 0px 0px 3px black;
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    border-radius: 15px;
+    text-shadow: 0px 0px 5px white;
+
+    transition: all;
+    transition-duration: .5s;
+}
+
+#tutorials-tab:hover, #assets-tab:hover, #documentation-tab:hover, #other-tab:hover{
+    border-radius: 0px;
 }

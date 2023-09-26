@@ -6,6 +6,7 @@ header{
     box-shadow: 0px 0px 10px black;
     position: fixed;
     width: 100vw;
+    z-index: 1;
 }
 .flower-icon{
     grid-column-start: 1;
