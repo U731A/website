@@ -1,0 +1,47 @@
+article{
+    margin: 0;
+    margin-top: 80px;
+    margin-left: 3vw;
+
+    width: 97vw;
+    height: calc(100vh - 80px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.article-title{
+    font-size: 3em;
+    font-family: 'Dela Gothic One', cursive;
+    text-align: center;
+    margin-top: 25px;
+    color: rgb(220, 245, 243);
+    text-shadow: 10px 5px 3px black;
+}
+.article-title *{
+    margin: 0px
+}
+.article-title h2{
+    font-size: 1em;
+}
+
+#start-exploring{
+    font-family: 'Anton', sans-serif;
+    color: rgb(255, 154, 223);
+    font-size: 3em;
+    margin-top: 100px;
+    background-color: white;
+    width: 25vw;
+    text-shadow: 5px 5px 0px rgb(107, 59, 59);
+    box-shadow: 0px 0px 15px black;
+    text-align: center;
+    border: 5px solid rgb(51, 51, 51);
+    border-radius: 15px;
+
+    transition: all;
+    transition-duration: .5s;
+}
+#start-exploring:hover{
+    font-size: calc(4em - 5px);
+    color: rgb(255, 69, 69);
+}

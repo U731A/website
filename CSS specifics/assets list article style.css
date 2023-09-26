@@ -1,0 +1,57 @@
+body{
+    background-image: linear-gradient(to right, black,white, black);
+}
+article{
+    margin: 0;
+    margin-top: 80px;
+    margin-left: 3vw;
+
+    width: 97vw;
+    height: calc(100vh - 80px);
+
+    display: grid;
+}
+div#asset-list-bg{
+    background-color: rgb(43, 44, 49);
+    margin: 0;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    box-shadow: 0px 0px 20px rgb(43, 44, 49);
+    height: 1500px;
+    
+}
+h1#asset-list{
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    margin: 0;
+    background-color: rgb(29, 29, 29);
+    box-shadow: 0px 0px 10px rgb(29, 29, 29);
+    height: 100px;
+    padding-top: 10px;
+}
+
+#assets-holder{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 63vw;
+    margin-left: 2vw;
+}
+.asset-containers{
+    border: 3px solid black;
+    box-shadow: 3px 3px 3px black;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 3vh;
+
+    transition: all;
+    transition-duration: 0.5s;
+}
+.asset-containers:hover{
+    border: 3px solid rgb(255, 132, 132);
+    border-radius: 5px;
+    background-color: rgb(255, 228, 228);
+}

@@ -1,4 +1,4 @@
-header{
+header {
     background-color: rgb(113, 113, 113);
     display: grid;
     grid-template-columns: 80px 1fr 15vw;
@@ -15,14 +15,15 @@ header{
     display: grid;
 }
 #flower-icon{
-    max-width: 100%;
+    max-width: 80px;
     grid-column-start: 1;
     grid-row-start: 1;
     z-index: 1;
 }
 #flower-frame{
     --opacity: 25%;
-    max-width: 100%;
+    max-width: 80px;
+    max-height: 80px;
     grid-column-start: 1;
     grid-row-start: 1;
     z-index: 2;
@@ -32,11 +33,11 @@ header{
     transition: all;
     transition-duration: 1s;
 }
-#flower-frame:hover{
+#flower-frame:hover {
     animation: rotation 2s linear 0s infinite forwards;
 }
 #flower-bg{
-    max-width: 100%;
+    max-width: 80px;
     grid-column-start: 1;
     grid-row-start: 1;
     opacity: var(opacity);
@@ -54,6 +55,16 @@ header{
     {
         rotate: 360deg;
     }
+}
+a#menu-button{
+    height: 80px;
+    width: 80px;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    position: fixed;
+    z-index: 3;
+
 }
 #banner{
     height: 100%;
