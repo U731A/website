@@ -14,7 +14,7 @@ div#asset-list-bg{
     margin-left: 15vw;
     width: 67vw;
     box-shadow: 0px 0px 20px rgb(43, 44, 49);
-    height: 1500px;
+    height: 1700px;
 }
 h1#asset-list{
     font-family: 'Dela Gothic One', cursive;
@@ -49,8 +49,8 @@ h1#asset-list{
     transition: all;
     transition-duration: 0.5s;
 
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 70px 1vw 1fr 7vw;
 }
 .asset-containers:hover{
     border: 3px solid rgb(255, 132, 132);
@@ -62,4 +62,22 @@ article #assets-holder img{
     margin: 5px;
     border-radius: 10px;
     box-shadow: 0px 0px 3px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+}
+.asset-containers .asset-name{
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+.asset-containers .asset-price{
+    grid-column-start: 4;
+    grid-row-start: 1;
+    text-align: center;
+}
+.asset-containers a {
+    z-index: 2;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    width: 63vw;
 }

@@ -28,7 +28,7 @@ article{
 #start-exploring{
     font-family: 'Anton', sans-serif;
     color: rgb(255, 154, 223);
-    font-size: 3em;
+    font-size: 2.5em;
     margin-top: 100px;
     background-color: white;
     width: 25vw;
@@ -42,6 +42,6 @@ article{
     transition-duration: .5s;
 }
 #start-exploring:hover{
-    font-size: calc(4em - 5px);
+    font-size: calc(3.5em - 5px);
     color: rgb(255, 69, 69);
 }
