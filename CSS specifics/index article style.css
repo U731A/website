@@ -2,6 +2,8 @@ article{
     margin: 0;
     margin-top: 80px;
     margin-left: 3vw;
+    background-repeat: no-repeat;
+    background-size: 100%;
 
     width: 97vw;
     height: calc(100vh - 80px);
@@ -9,6 +11,8 @@ article{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    animation: background-image 45s linear 0s infinite forwards;    
 }
 .article-title{
     font-size: 3em;
@@ -16,7 +20,7 @@ article{
     text-align: center;
     margin-top: 25px;
     color: rgb(220, 245, 243);
-    text-shadow: 10px 5px 3px black;
+    text-shadow: 0px 0px 50px black;
 }
 .article-title *{
     margin: 0px
@@ -35,13 +39,57 @@ article{
     text-shadow: 5px 5px 0px rgb(107, 59, 59);
     box-shadow: 0px 0px 15px black;
     text-align: center;
-    border: 5px solid rgb(51, 51, 51);
+    border: 2px solid rgb(51, 51, 51);
     border-radius: 15px;
 
     transition: all;
     transition-duration: .5s;
 }
+article a {
+    width: 25vw;
+    height: 2.5em;
+}
 #start-exploring:hover{
     font-size: calc(3.5em - 5px);
     color: rgb(255, 69, 69);
+}
+
+@keyframes background-image{
+    0%{
+        background-image: url("../Assets/Pictures/Lykana\ Headshot.png");
+    }
+    19%{
+        background-image: url("../Assets/Pictures/Lykana\ Headshot.png");
+    }
+    21%{
+        background-image: url("../Assets/Pictures/Finnicki.png");
+        
+    }
+    39%{
+        background-image: url("../Assets/Pictures/Finnicki.png");
+    }
+    41%{
+        background-image: url("../Assets/Pictures/Minecraft.png");
+    }
+    59%{
+        background-image: url("../Assets/Pictures/Minecraft.png");
+    }
+    61%{
+        background-image: url("../Assets/Pictures/Public\ Avis.png");
+    }
+    79%{
+        background-image: url("../Assets/Pictures/Public\ Avis.png");
+    }
+    81%{
+        background-image: url("../Assets/Pictures/Plush.png");
+    }
+    98%{
+        background-image: url("../Assets/Pictures/Plush.png");
+    }
+    100%{
+        background-image: url("../Assets/Pictures/Lykana\ Headshot.png");
+    }
+}
+.hide{
+    display: none;
 }
