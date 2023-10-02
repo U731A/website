@@ -1,3 +1,6 @@
+body {
+    overflow: hidden;
+}
 article{
     margin: 0;
     margin-top: 80px;
@@ -12,7 +15,7 @@ article{
     flex-direction: column;
     align-items: center;
 
-    animation: background-image 45s linear 0s infinite forwards;    
+    /* animation: background-image 45s linear 0s infinite forwards;     */
 }
 .article-title{
     font-size: 3em;
@@ -54,42 +57,61 @@ article a {
     color: rgb(255, 69, 69);
 }
 
+#img-bg{
+    /* display: grid; */
+    /* grid-template-columns: calc(1920px / 100vh) calc(1920px / 100vh) calc(1920px / 100vh) calc(1920px / 100vh) calc(1920px / 100vh) calc(1920px / 100vh); */
+    display: flex;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+
+    object-fit: none;
+
+    animation: background-image 60s linear 0s infinite forwards;
+}
+.img-bg{
+    /* grid-row-start: 1; */
+    margin-right: calc(100vw - 1920px);
+
+    object-fit: none;
+    object-position: 0 -15vh;
+}
+
+
+
 @keyframes background-image{
     0%{
-        background-image: url("../Assets/Pictures/Lykana\ Headshot.png");
+        left: 0vw;
     }
     19%{
-        background-image: url("../Assets/Pictures/Lykana\ Headshot.png");
+        left: 0vw;
     }
     21%{
-        background-image: url("../Assets/Pictures/Finnicki.png");
-        
+        left: -100vw;
     }
     39%{
-        background-image: url("../Assets/Pictures/Finnicki.png");
+        left: -100vw;
     }
     41%{
-        background-image: url("../Assets/Pictures/Minecraft.png");
+        left: -200vw;
     }
     59%{
-        background-image: url("../Assets/Pictures/Minecraft.png");
+        left: -200vw;
     }
     61%{
-        background-image: url("../Assets/Pictures/Public\ Avis.png");
+        left: -300vw;
     }
     79%{
-        background-image: url("../Assets/Pictures/Public\ Avis.png");
+        left: -300vw;
     }
     81%{
-        background-image: url("../Assets/Pictures/Plush.png");
+        left: -400vw;
     }
     98%{
-        background-image: url("../Assets/Pictures/Plush.png");
+        left: -400vw;
     }
     100%{
-        background-image: url("../Assets/Pictures/Lykana\ Headshot.png");
+        left: 0vw;
     }
-}
-.hide{
-    display: none;
 }
