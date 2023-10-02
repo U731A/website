@@ -23,10 +23,10 @@ div#holder{
 
     box-shadow: 0px 0px 15px black;
     display: grid;
-    grid-template-rows: 15vh calc(calc(100vh / 4096) * 2160) calc(280px + 7vh) 15vh 70vh;
+    grid-template-rows: 15vh calc(calc(100vh / 4096) * 2160) calc(280px + 7vh) 15vh 70vh 50px 15vh;
     grid-template-columns: 1fr 1fr;
 }
-h1#Prj-title {
+h1.separation {
     color: black;
     font-family: 'Dela Gothic One', cursive;
     background-color: white;
@@ -35,9 +35,6 @@ h1#Prj-title {
     padding-top: 5vh;
     height: 10vh;
     grid-column: span 2;
-
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 #Prj-img1 {
     border-radius: 30px;
@@ -69,16 +66,6 @@ li{
 }
 li:hover{
     transform: translateX(-1vw);
-}
-#video-title {
-    color: black;
-    font-family: 'Dela Gothic One', cursive;
-    background-color: white;
-    font-size: 2em;
-    text-align: center;
-    padding-top: 5vh;
-    height: 10vh;
-    grid-column: span 2;
 }
 a#tutorial{
     justify-self: center;
@@ -115,4 +102,14 @@ h3#video-instruction{
     text-align: center;
 
     box-shadow: 0px 0px 5px rgb(124, 124, 124);
+}
+div#functionalities{
+    grid-column: span 2;
+}
+div#functionalities p {
+    
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    align-self: center;
 }
