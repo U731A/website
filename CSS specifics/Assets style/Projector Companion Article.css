@@ -1,6 +1,14 @@
 * {
     margin: 0;
 }
+footer .bg{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+}
 body {
     background-color: white;
 }
@@ -8,17 +16,103 @@ article{
     margin-top: 80px;
 }
 div#holder{
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(0, 0, 0);
     margin-left: 15vw;
-    height: 150vh;
+    height: 2000px;
     width: 70vw;
 
     box-shadow: 0px 0px 15px black;
     display: grid;
+    grid-template-rows: 15vh calc(calc(100vh / 4096) * 2160) calc(280px + 7vh) 15vh 70vh;
+    grid-template-columns: 1fr 1fr;
 }
-#Prj-img1{
-    
-    border-radius: 50px;
-    width: 60vw;
+h1#Prj-title {
+    color: black;
+    font-family: 'Dela Gothic One', cursive;
+    background-color: white;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 5vh;
+    height: 10vh;
+    grid-column: span 2;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#Prj-img1 {
+    border-radius: 30px;
+    width: 50vw;
     justify-content: center;
+    justify-self: center;
+    /* box-shadow: 0px 0px 10px white; */
+
+    grid-row-start: 2;
+    grid-column: span 2;
+}
+div#specs{
+    grid-column: span 2;
+    height: calc(280px + 7vh);
+}
+li{
+    color: black;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5em;
+    padding-left: 2vw;
+    background-color: white;
+    background-image: linear-gradient(to right, white, white, black);
+    width: 65vw;
+    height: 40px;
+    border: 1px solid black;
+
+    transition: all;
+    transition-duration: 0.5s;
+}
+li:hover{
+    transform: translateX(-1vw);
+}
+#video-title {
+    color: black;
+    font-family: 'Dela Gothic One', cursive;
+    background-color: white;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 5vh;
+    height: 10vh;
+    grid-column: span 2;
+}
+a#tutorial{
+    justify-self: center;
+    grid-column: span 2;
+    margin-top: 5vh;
+}
+video {
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+
+
+    transition: all;
+    transition-duration: 0.5s;
+}
+video source{
+    object-fit: none;
+}
+video:hover{
+    box-shadow: 0px 0px 15px rgb(170, 0, 0);
+    height: 475px;
+    width: 760px;
+}
+h3#video-instruction{
+    background-color: white;
+    color: black;
+    height: 1.5em;
+    padding-top: 2px;
+    width: 300px;
+    justify-self: center;
+    border-radius: 10px;
+    grid-column: span 2;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 0.75em;
+    text-align: center;
+
+    box-shadow: 0px 0px 5px rgb(124, 124, 124);
 }
