@@ -83,9 +83,17 @@
                 <p>This little projector wouldn't live up too it's name if it didn't emit light! There is an implemented toggle that turns on a light source (spot light) with which you can light up dark worlds.</p>
                 <p>There is also a built-in hologram projector! You can change it's color or the hologram pattern by checking out the documentation.</p>
             </div>
-        </div>
 
-        
+            <h1 class="separation">Tutorials</h1>
+            <div id="doc1" class="doc">
+                <h2 class="doc">How to remove the dissolve</h2>
+                <p class="doc">The dissolve works with poiyomi. You will need to go in the FX controller and disable the fading animations' animator layer to make sure that it doesn't play and hide the projector for a few seconds while it moves. First, find your FX layer. You can locate the FX layer by clicking on the root of your avatar in the hierarchy and then look under the VRC Avatar Descriptor component. It should have a tab named "Playable Layers". The one defined for "FX" is your avatar's FX layer.</p>
+                <img src="../../Assets/tutorial screenshots/PrjComp screenshots/FX Layer.png" alt="FX layer screenshot">
+                <p class="doc">Once in your avatar's FX controller, if you installed your companion properly, you should be able to find the "Fading" animation layer. Click the options button for that layer.</p>
+                <img src="../../Assets/tutorial screenshots/PrjComp screenshots/Fading Layer.png" alt="Fading Layer screenshot">
+                <p class="doc">In the little options menu, just set the weight to 0 and it will deactivate the ghost's fading animations. If you have any problems, please ask in the #help channel of my discord server. (click the discord logo in the header to join it)</p>
+            </div>
+        </div>
     </article>
 
     <footer>
