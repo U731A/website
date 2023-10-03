@@ -20,11 +20,11 @@ div#holder{
     margin-left: 15vw;
     height: 7500px;
     width: 70vw;
-
     box-shadow: 0px 0px 15px black;
-    display: grid;
-    grid-template-rows: 15vh calc(calc(100vh / 4096) * 2160) calc(280px + 7vh) 15vh 70vh 50px 15vh 75em 15vh;
-    grid-template-columns: 1fr 1fr;
+
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
 }
 h1.separation {
     color: black;
@@ -34,7 +34,7 @@ h1.separation {
     text-align: center;
     padding-top: 5vh;
     height: 10vh;
-    grid-column: span 2;
+    width: 70vw;
 }
 #Prj-img1 {
     border-radius: 30px;
@@ -42,12 +42,8 @@ h1.separation {
     justify-content: center;
     justify-self: center;
     /* box-shadow: 0px 0px 10px white; */
-
-    grid-row-start: 2;
-    grid-column: span 2;
 }
 div#specs{
-    grid-column: span 2;
     height: calc(280px + 7vh);
 }
 li{
@@ -69,7 +65,6 @@ li:hover{
 }
 a#tutorial{
     justify-self: center;
-    grid-column: span 2;
     margin-top: 5vh;
 }
 video {
@@ -96,15 +91,11 @@ h3#video-instruction{
     width: 300px;
     justify-self: center;
     border-radius: 10px;
-    grid-column: span 2;
     font-family: 'Dela Gothic One', cursive;
     font-size: 0.75em;
     text-align: center;
-
+    margin: 15px;
     box-shadow: 0px 0px 5px rgb(124, 124, 124);
-}
-div#functionalities{
-    grid-column: span 2;
 }
 div#functionalities p {
     padding-top: 2vh;
@@ -116,23 +107,22 @@ div#functionalities p {
     text-align: center;
     align-self: center;
 }
-.doc{
+.tut{
     display: flex;
     flex-direction: column;
-    grid-column: span 2;
 }
-.doc img{
+.tut img{
     width: 50vw;
     border-radius: 10px;
     align-self: center;
 }
-h2.doc{
+h2.tut{
     align-self: center;
     border-bottom: 1px solid white;
     width: 50vw;
     justify-self: center;
 }
-.doc h2, #doc1 p{
+.tut h2, #tut1 p{
     font-family: 'Dela Gothic One', cursive;
     text-align: center;
     color: white;

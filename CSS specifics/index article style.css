@@ -68,7 +68,7 @@ article a {
 
     object-fit: none;
 
-    animation: background-image 60s cubic-bezier(0.165, 0.84, 0.44, 1) 0s infinite forwards;
+    animation: background-image 45s cubic-bezier(0.165, 0.84, 0.44, 1) 0s infinite forwards;
 }
 .img-bg{
     /* grid-row-start: 1; */
