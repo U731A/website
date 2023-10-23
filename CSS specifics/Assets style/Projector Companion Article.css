@@ -72,9 +72,11 @@ div.separation a:hover, div.tut a:hover{
     height: 10vh;
     width: 10vh;
 }
-div.separation img, div.tut img{
-
+div.separation img{
     height: 100%;
+}
+div.tut img{
+    height: 40vh;
 }
 div.separation h1{
     width: 50vw;
