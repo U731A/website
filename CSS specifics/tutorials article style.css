@@ -1,0 +1,38 @@
+article{
+    width: calc(100vw - 3vw);
+    margin-left: 3vw;
+    margin-top: 80px;
+    text-align: center;
+}
+article h1{
+    color: white;
+    font-family: 'Dela Gothic One', cursive;;
+    font-size: 3em;
+    margin: 0;
+    border-bottom: 2px solid white;
+    border-radius: 20px;
+}
+article div{
+    border-bottom: 2px solid white;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Dela Gothic One', cursive;;
+}
+article ul{
+    align-self: flex-start;
+    padding: 0;
+    width: 60vw;
+}
+article li{
+    text-decoration: none;
+    color: #c2fff9;
+    font-size: 1.5em;
+
+    transition: all;
+    transition-duration: 0.5s;
+}
+article li:hover{
+    text-decoration: underline;
+    color: #e66363;
+}

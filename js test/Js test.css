@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+}
+form{
+    margin: 10px
+}
+video#arf-arf-arf-arf{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+}
+h1#date{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1; 
+    background-color: white;
+}

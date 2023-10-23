@@ -53,11 +53,92 @@
 
     <article>
         <div id="holder">
-            <h1 id="Prj-title">The Projector Companion</h1>
+            <div class="separation">
+                <h1 class="separation" id="Prj-title">The Projector Companion</h1>
+                <a href="#Prj-title">
+                    <img src="../../Assets/Link.png" alt="link button image">
+                </a>
+            </div>
+            
             <img src="../../Assets/Showcase Pics/ProjectorCompanion1.png" alt="PrjComp_Showcase1" id="Prj-img1">
+
+                <div id="specs">
+                    <li>Price            : Free!</li>
+                    <li>Polygons         : 1359 Faces | 3114 Tris</li>
+                    <li>Parameter memory : 5 bits</li>
+                    <li>material slots   : 2</li>
+                    <li>Light Sources    : 1</li>
+                    <li>Rigid Bodies     : 1</li>
+                    <li>Complexity       : reasonable</li>
+                </div>
+
+            <a href="https://u731.gumroad.com/l/Projector_Companion?layout=profile" id="open-gumroad" target="_blank">
+                <h3>CLICK HERE TO OPEN IN GUMROAD</h3>
+            </a>
+            
+
+            <div class="separation" id="video-separation">
+                <h1>How to put it on your avatar</h1>
+                <a href="#video-separation">
+                    <img src="../../Assets/Link.png" alt="link button image">
+                </a>
+            </div>
+            <a href="https://www.youtube.com/watch?v=TzARQOtKzJE" id="tutorial" target="_blank">
+                <video height="450px" width="720px" autoplay muted>
+                    <source src="../../Assets/Videos/How to import the Projector Companion to your avatar (USE VERSION 2.2).mp4" type="video/mp4">
+                    your browser doesn't support videos
+                </video>
+            </a>
+            <h3 id="video-instruction">Click the video to open it in youtube!</h3>
+
+            <div class="separation" id="functionalities-separation">
+                <h1>Functionalities</h1>
+                <a href="#functionalities-separation">
+                    <img src="../../Assets/Link.png" alt="link button image">
+                </a>
+            </div>
+            <div id="functionalities">
+                <p>The companion moves smoothly using a springjoint, <b>which is not quest-compatible.</b> This system allows to only have to render one projector. This makes it easier to add skins or accessories to it. It also makes it easier to animate.</p>
+                <p>You can change the projector's position from one to another, depending on where you set them. Take note that the companion has a constraint that makes it so it always looks in the same direction as you.</p>
+                <p>There is also an option to change the facing direction of the projector. take note that if the projector is facing you, the movements following the head will be inverted.</p>
+                <p>This little projector wouldn't live up too it's name if it didn't emit light! There is an implemented toggle that turns on a light source (spot light) with which you can light up dark worlds.</p>
+                <p>There is also a built-in hologram projector! You can change it's color or the hologram pattern by checking out the documentation.</p>
+            </div>
+
+            <div class="separation" id="tutorials-separation">
+                <h1>Tutorials</h1>
+                <a href="#tutorials-separation">
+                    <img src="../../Assets/Link.png" alt="link button image">
+                </a>
+            </div>
+
+            <div id="tut1" class="tut">
+                <h2 class="doc">How to remove the dissolve</h2>
+                <a href="#tut1">
+                    <img src="../../Assets/Link.png" alt="link button image">
+                </a>
+                <p class="doc">The dissolve works with poiyomi. You will need to go in the FX controller and disable the fading animations' animator layer to make sure that it doesn't play and hide the projector for a few seconds while it moves. First, find your FX layer. You can locate the FX layer by clicking on the root of your avatar in the hierarchy and then look under the VRC Avatar Descriptor component. It should have a tab named "Playable Layers". The one defined for "FX" is your avatar's FX layer.</p>
+                <img src="../../Assets/tutorial screenshots/PrjComp screenshots/FX Layer.png" alt="FX layer screenshot" class="tut">
+                <p class="doc">Once in your avatar's FX controller, if you installed your companion properly, you should be able to find the "Fading" animation layer. Click the options button for that layer.</p>
+                <img src="../../Assets/tutorial screenshots/PrjComp screenshots/Fading Layer.png" alt="Fading Layer screenshot" class="tut">
+                <p class="doc">In the little options menu, just set the weight to 0 and it will deactivate the ghost's fading animations. If you have any problems, please ask in the #help channel of my discord server. (click the discord logo in the header to join it)</p>
+            </div>
+
+            <div class="separation" id="documentation-separation">
+                <h1>Documentation</h1>
+                <a href="#documentation-separation">
+                    <img src="../../Assets/Link.png" alt="link button image">
+                </a>
+            </div>  
+            <div id="doc1" class="doc">
+
+            </div>
         </div>
-
-
     </article>
+
+    <footer>
+        <img src="../../Assets/Showcase Pics/ProjectorCompanion2.png" alt="backround img" id="bg-img" class="bg">
+        <h1 id="dim" class="bg">.</h1>
+    </footer>
 </body>
 </html>
