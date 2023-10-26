@@ -1,4 +1,5 @@
 let order = "by price";
+let PricesOrdered = false;
 const elementList = [ //je déclare tous les éléments avec les 2 premiers caractère qui définissent le prix
     "00Astral Regulus Texture",
     "10Cloak",
@@ -15,29 +16,53 @@ const elementList = [ //je déclare tous les éléments avec les 2 premiers cara
     "03Regulus Latex Suit",
     "10Sunset Fit",
 ];
-const elementListNoSpaces = [];
+let priceList = [];
+let elementListNoSpaces = [];
 
 removeSpaces();
 reorder();
 
 function removeSpaces(){
-    for (let i = 0; i < elementList.length; i++){
-        let stringTemp = "";
-        for (let j = 0; j < elementList[i].length; j++){
-            if (elementList[i][j] == ' '){
-                stringTemp += "-";
+
+    //ordered by name
+    if (order == "by name" || PricesOrdered == false){
+        for (let i = 0; i < elementList.length; i++){
+            let stringTemp = "";
+            for (let j = 0; j < elementList[i].length; j++){
+                if (elementList[i][j] == ' '){
+                    stringTemp += "-";
+                }
+                else {
+                    stringTemp += elementList[i][j];
+                }
             }
-            else {
-                stringTemp += elementList[i][j];
-            }
+            elementListNoSpaces[i] = stringTemp;
+            console.log("converted strings :");
+            console.log(stringTemp);
         }
-        elementListNoSpaces[i] = stringTemp;
-        console.log("converted strings :");
-        console.log(stringTemp);
     }
+    else if (order == "by price" && PricesOrdered == true){
+        for (let i = 0; i < priceList.length; i++){
+            let stringTemp = "";
+            for (let j = 0; j < priceList[i].length; j++){
+                if (priceList[i][j] == ' '){
+                    stringTemp += "-";
+                }
+                else {
+                    stringTemp += priceList[i][j];
+                }
+            }
+            elementListNoSpaces[i] = stringTemp;
+        }
+    }
+    
+
+
 
     //send result in console
     console.log("removeSpaces() results : ------------")
+    console.log("price list generated? " + PricesOrdered)
+    console.log("order " + order)
     for (let i = 0; i < elementListNoSpaces.length; i++){
         console.log(elementListNoSpaces[i]);
     }
@@ -70,6 +95,7 @@ function reorder(){
 
     if (order == "by name"){
         console.log("Loading elements by name...");
+        removeSpaces();
         for (let i = 0; i < elementList.length; i++){
 
             let newElement = document.createElement("div");
@@ -88,6 +114,7 @@ function reorder(){
     }
     else if (order == "by price"){
         console.log("loading elements by price...")
+        
 
             //create a second list with the prices
             let prices = [];
@@ -97,7 +124,7 @@ function reorder(){
             }
 
             //reorders a new list according to the prices
-            let priceList = [];
+            priceList = [];
             for (let j = 0; j < elementList.length; j++){
                 let cheapestElement = 999;
                 let cheapestElementIndex = -1;
@@ -143,6 +170,8 @@ function reorder(){
                 }
                 
             }
+            PricesOrdered = true;
+            removeSpaces();
 
             for (let i = 0; i < priceList.length; i++){
 
@@ -160,6 +189,11 @@ function reorder(){
                 console.log("loaded : " + priceList[i].substring(2))
             }
     }
+
+    //assign special links to appropriate objects
+    //projector companion
+    let projectorCompanion = document.querySelector;("#Projector-Companion a");
+    //console.log("PROJECTOR COMPANION SELECTED ELEMENT : " + projectorCompanion.getAttribute())
 }
 function openDropDown(){
     let img = document.getElementById("drop-down-icon")
