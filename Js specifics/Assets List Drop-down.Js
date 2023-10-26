@@ -99,7 +99,7 @@ function reorder(){
         for (let i = 0; i < elementList.length; i++){
 
             let newElement = document.createElement("div");
-            newElement.id = elementList[i].substring(2);
+            newElement.id = elementListNoSpaces[i].substring(2);
             newElement.className = "asset-containers"
             document.getElementById("assets-holder").appendChild(newElement);
 
@@ -176,7 +176,7 @@ function reorder(){
             for (let i = 0; i < priceList.length; i++){
 
                 let newElement = document.createElement("div");
-                newElement.id = priceList[i].substring(2);
+                newElement.id = elementListNoSpaces[i].substring(2);
                 newElement.className = "asset-containers"
                 document.getElementById("assets-holder").appendChild(newElement);
     
@@ -192,8 +192,8 @@ function reorder(){
 
     //assign special links to appropriate objects
     //projector companion
-    let projectorCompanion = document.querySelector;("#Projector-Companion a");
-    //console.log("PROJECTOR COMPANION SELECTED ELEMENT : " + projectorCompanion.getAttribute())
+    let projectorCompanion = document.querySelector("#Projector-Companion a");
+    projectorCompanion.href = "HTML Specifics/Assets/Projector Companion.html";
 }
 function openDropDown(){
     let img = document.getElementById("drop-down-icon")
