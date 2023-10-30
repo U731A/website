@@ -2,9 +2,11 @@ let order = "by price";
 let PricesOrdered = false;
 const elementList = [ //je déclare tous les éléments avec les 2 premiers caractère qui définissent le prix
     "00Astral Regulus Texture",
+    "06Choco Texture",
     "10Cloak",
     "08Elemental Skins",
     "05Finnicki",
+    "06Gana Texture",
     "03Horn Pack",
     "20Laser Tag Vest",
     "10Minecraft Armor",
