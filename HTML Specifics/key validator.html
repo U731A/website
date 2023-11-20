@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloop</title>
+    <link rel="stylesheet" href="../Style Main.css">
+    <link rel="stylesheet" href="../Style Header.css">
+    <link rel="stylesheet" href="../CSS specifics/key validator.css">
+    <link rel="stylesheet" href="../Style Aside.css">
+    <link rel="shortcut icon" href="../Assets/flower merge.png">
+    <script defer src="../Js specifics/key validator.js"></script>
+    <script defer src="../Js specifics/API request.js"></script>
+    <script defer src="../Js specifics/RequireJS.js"></script>
+    <script src="https://unpkg.com/axios@1.1.1/dist/axios.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+            <div class="flower-icon">
+                <img src="../Assets/icon bg.png" alt="icon BG" id="flower-bg">
+                <img src="../Assets/Flower.png" alt="Flower" id="flower-icon">
+                <img src="../Assets/Frame.png" alt="Frame.png" id="flower-frame">
+                <a href="../index.html" id="menu-button"></a>
+            </div>     
+        <img src="../Assets/banner.png" alt="banner" id="banner">
+        <h1 id="page-title">BLOOP</h1>
+
+        <div class="socials">
+            <a href="https://discord.com/invite/NxMTPH6ZYV" target="_blank"><img src="../Assets/dc.png" alt="discord logo" id="dc-logo"></a>
+            <a href="https://u731.gumroad.com/" target="_blank"><img src="../Assets/gumroad.png" alt="gumroad logo" id="gr-logo"></a>
+            <a href="https://www.youtube.com/channel/UC3NtL0NxNouWt38KO2PNfIg" target="_blank"><img src="../Assets/YT.png" alt="youtube logo" id="yt-logo"></a>
+        </div>
+    </header>
+
+
+
+    <aside>
+        <div class="tabs">
+            <a href="../AssetsList.html"><h1 id="assets-tab">Assets List</h1></a>
+            <a href="../Tutorials.html"><h1 id="tutorials-tab">Tutorials</h1></a>
+            <a href="../Documentation.html"><h1 id="documentation-tab">Documentation</h1></a>
+            <a href="../Other.html"><h1 id="other-tab">Other</h1></a>
+        </div>
+    </aside>
+
+    <article>
+        <div id="main-holder">
+            <h1 id="title">Key validator</h1>
+            <h2 id="title">Select a product and put your lisence key. Keys are not registered, this is just a little project for me to test out gumroad's API. Sorry about the aesthetic, the thonk machine was going too fast and I just did it without cleaning it up...</h2>
+            <div>
+                <form onkeydown="return event.key != 'Enter';">
+                    <div id="drop-down" onmouseleave="closeDropdown()">
+                        <p id="shown" onclick="openDropdown()" class="drop-down-selection"></p>
+                        <div id="div-hidden">
+                            <!-- hidden elements of the drop-down will appear here -->
+                        </div>
+                    </div>
+                    
+                    <div id="license-key">
+                        <p>Enter your lisence key:</p>
+                        <input type="text" id="key-input">
+                    </div>
+                    <h2 id="find-key" onclick="validate()">FIND KEY</h2>
+                </form>
+                
+            </div>
+            
+        </div>
+    </article>
+    
+</body>
+</html>

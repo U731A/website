@@ -1,5 +1,9 @@
+//obtenir une liste de tous les assets
 let objects = document.getElementsByClassName("asset-name");
+
+//fonction de recherche ( elle permet de highlighter la recherche dans les noms et display: none les assets qui n'ont pas de match avec la recherche)
 function search(){
+    //déclaration des variables
     let searchBar = document.getElementById("search-field");
     objects = document.getElementsByClassName("asset-name");
     let first = true;
@@ -10,9 +14,10 @@ function search(){
 
     searchBar.value = search;
 
-
+    //appelle la fonction qui enlève tous les <span> pour ne pas briser le prochain code
     clearSpans();
 
+    //gros IF qui va regarder si la recherche est trouvée dans le nom de chaque asset
     if (search != null){
         for (let i = 0; i < objects.length; i++){
             let foundResults = false;
@@ -27,6 +32,7 @@ function search(){
                     //console.log(j)
                     
             }
+            //si un match a été trouvé, il ajoute les <span>. Les <span> ont un style qui les change en rouge.
             if (foundResults){
                 objects[i].innerHTML = concatenatedString;
                 //console.log("object: " + objects[i].innerHTML);

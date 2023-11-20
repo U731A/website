@@ -1,0 +1,85 @@
+article {
+    margin: 0;
+    margin-top: 80px;
+    margin-left: 3vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+article h1#title, article h2#title{
+    color: white;
+    font-family: 'Dela Gothic One', cursive;;
+    text-shadow: 0px 0px 5px black;
+    margin: 0;
+    font-size: 0.8em;
+    width: 55vw;
+    text-align: center;
+}
+article h1#title{
+    font-size: 3em;
+}
+article h2#title{
+    margin-bottom: 50px;
+}
+div#main-holder{
+    width: 70vw;
+    justify-self: center;
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px white;
+    padding: 50px;
+}
+
+/* form's style */
+form{
+    display: flex;
+}
+#license-key{
+    display: none;
+}
+form div p.drop-down-selection{
+    width: 175px;
+    margin: 0;
+    margin-left: 5px;
+
+    transition: all;
+    transition-duration: 500ms;
+}
+form div p:hover{
+    color:rgb(198, 75, 75);
+    text-decoration:underline;
+}
+div#main-holder div{
+    align-self: flex-start;
+}
+form div#drop-down{
+    border-radius: 15px;
+    border: none;
+    height: 1.3em;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px black;
+}
+form div#license-key{
+    margin-left: 10px;
+}
+form div#license-key p{
+    margin: 0;
+}
+#find-key{
+    margin: 0;
+    border: 1px solid black;
+    width: 5em;
+    height: 1em;
+    display: none;
+    margin-left: 10px;
+
+    transition: all;
+    transition-duration: 500ms;
+}
+#find-key:hover{
+    box-shadow: 3px 3px 0px black;
+}
