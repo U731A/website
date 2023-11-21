@@ -14,7 +14,7 @@ let gameBoard = [
     "empty"
 ];
 //tableau remplis temporairement pour aider le CPU à trouver le meilleur coup
-let CPUplacements = [
+let CPUPlacements = [
     "",
     "",
     "",
@@ -26,11 +26,13 @@ let CPUplacements = [
     ""
 ];
 
-//reset le board just pour être sûr
+//reset le board juste pour être sûr
 reset();
 
 
-//la fonction donne la valeur de base à tous les tableaux (fonction non utilisé, j'ai pas eu le temps de finir le jeu)
+/**
+ * la fonction donne la valeur de base à tous les tableaux (fonction non utilisé, j'ai pas eu le temps de finir le jeu)
+ */
 function reset(){
     for (let i = 0; i < images.length; i++){
         images[i].setAttribute("src", "");
@@ -38,12 +40,16 @@ function reset(){
     for (let i = 0; i < gameBoard.length; i++){
         gameBoard[i] = "empty";
     }
-    for (let i = 0; i < CPUplacements.length; i++){
-        CPUplacements[i] = "";
+    for (let i = 0; i < CPUPlacements.length; i++){
+        CPUPlacements[i] = "";
     }
 }
 
-//s'éxécute quand le joueur clique un carré
+/**
+*S'exécute chaque fois que le joueur joue
+*
+*@param id nombre qui contient l'index de la case que le joueur a cliqué
+*/
 function update(id){
     console.log("update(id);")
 
@@ -55,7 +61,10 @@ function update(id){
     }
 }
 
-//tour du CPU
+/**
+ * fonction qui sert à faire jouer le CPU.
+ * Elle ne contient pas l'IA, elle sert seulement à lire l'info de l'IA et placer son cercle
+ */
 function CPU(){
     let running = false;    //sert au while
     let winnable = false;   //bool de si c'est possible pour le CPU de gagner
@@ -68,8 +77,8 @@ function CPU(){
     }
     CPUhelp("O");
     //regarde si c'est possible de gagner pour le CPU
-    for (let i = 0; i < CPUplacements.length; i++){
-        if (CPUplacements[i] == "A"){
+    for (let i = 0; i < CPUPlacements.length; i++){
+        if (CPUPlacements[i] == "A"){
             winnable = true;
         }
     }
@@ -77,8 +86,8 @@ function CPU(){
     if (!winnable){
         CPUhelp("X");
         //regarde si le joueur est sur le bord de gagner
-        for (let i = 0; i < CPUplacements.length; i++){
-            if (CPUplacements[i] == "A"){
+        for (let i = 0; i < CPUPlacements.length; i++){
+            if (CPUPlacements[i] == "A"){
                 aid = true;
             }
         }
@@ -99,7 +108,7 @@ function CPU(){
         //si le joueur est sur le bord de gagner
         if (aid){
             let rng = Math.floor(Math.random()*9);
-            if (CPUplacements[rng] == "A"){
+            if (CPUPlacements[rng] == "A"){
                 images[rng].setAttribute("src", "assets\\O.png");
                 images[rng].style.width = "90%";
                 gameBoard[rng] = "O";
@@ -109,7 +118,7 @@ function CPU(){
         //si le CPU est sur le bord de gagner
         else if(winnable){
             let rng = Math.floor(Math.random()*9);
-            if (CPUplacements[rng] == "A"){
+            if (CPUPlacements[rng] == "A"){
                 images[rng].setAttribute("src", "assets\\O.png");
                 images[rng].style.width = "90%";
                 gameBoard[rng] = "O";
@@ -131,22 +140,26 @@ function CPU(){
     
 }
 
-//fonction qui remplis le tableau CPUplacements avec des "A" pour montrer les bons coups au CPU
+/**
+ * fonction qui remplis le tableau CPUPlacements avec des A à tous les endroits où il trouve des combos du char donné.
+ * Cela permet au CPU de voir si le joueur peut gagner au prochain tour ou si il peut lui-même gagner
+ * @param {char} char caractère à rechercher
+ */
 function CPUhelp(char){
-    // update CPUplacements list
+    // update CPUPlacements list
     console.log("reset CPUhelp... char = " + char)
-    for (let i = 0; i < CPUplacements.length; i++){
-        CPUplacements[i] = "";
+    for (let i = 0; i < CPUPlacements.length; i++){
+        CPUPlacements[i] = "";
     }
     console.log("done.")
     console.log("filling CPUhelp board")
     //remplis le board temporaire avec les positions du tableau permanent
     for (let i = 0; i < gameBoard.length; i++){
         if (gameBoard[i] == "X"){
-            CPUplacements[i] = "X"
+            CPUPlacements[i] = "X"
         }
         else if (gameBoard[i] == "O"){
-            CPUplacements[i] = "O";
+            CPUPlacements[i] = "O";
         }
     }
 
@@ -154,26 +167,26 @@ function CPUhelp(char){
 
         // regarde pour des matchs horizontallement
         if (
-            ((CPUplacements[0+(i*3)] == CPUplacements[1+(i*3)]) && (CPUplacements[0+(i*3)] == char)) ||
-            ((CPUplacements[0+(i*3)] == CPUplacements[2+(i*3)]) && (CPUplacements[0+(i*3)] == char)) ||
-            ((CPUplacements[1+(i*3)] == CPUplacements[2+(i*3)]) && (CPUplacements[1+(i*3)] == char))
+            ((CPUPlacements[0+(i*3)] == CPUPlacements[1+(i*3)]) && (CPUPlacements[0+(i*3)] == char)) ||
+            ((CPUPlacements[0+(i*3)] == CPUPlacements[2+(i*3)]) && (CPUPlacements[0+(i*3)] == char)) ||
+            ((CPUPlacements[1+(i*3)] == CPUPlacements[2+(i*3)]) && (CPUPlacements[1+(i*3)] == char))
             ){
                 for (let j = 0; j < 3; j++){
-                    if (CPUplacements[j+(i*3)] == ""){
-                        CPUplacements[j+(i*3)] = "A";
+                    if (CPUPlacements[j+(i*3)] == ""){
+                        CPUPlacements[j+(i*3)] = "A";
                     }
                 }
             }
 
         //regarde pour des matchs verticalement
         if (
-            ((CPUplacements[i+(0*3)] == CPUplacements[i+(1*3)]) && (CPUplacements[i+(0*3)] == char)) ||
-            ((CPUplacements[i+(0*3)] == CPUplacements[i+(2*3)]) && (CPUplacements[i+(0*3)] == char)) ||
-            ((CPUplacements[i+(1*3)] == CPUplacements[i+(2*3)]) && (CPUplacements[i+(1*3)] == char))
+            ((CPUPlacements[i+(0*3)] == CPUPlacements[i+(1*3)]) && (CPUPlacements[i+(0*3)] == char)) ||
+            ((CPUPlacements[i+(0*3)] == CPUPlacements[i+(2*3)]) && (CPUPlacements[i+(0*3)] == char)) ||
+            ((CPUPlacements[i+(1*3)] == CPUPlacements[i+(2*3)]) && (CPUPlacements[i+(1*3)] == char))
             ){
                 for (let j = 0; j < 3; j++){
-                    if (CPUplacements[i+(j*3)] == ""){
-                        CPUplacements[i+(j*3)] = "A";
+                    if (CPUPlacements[i+(j*3)] == ""){
+                        CPUPlacements[i+(j*3)] = "A";
                     }
                 }  
         }
@@ -181,36 +194,38 @@ function CPUhelp(char){
     //regarde pour des matchs diagonalement
     //première diagonale
     if (
-        ((CPUplacements[0] == CPUplacements[4]) && (CPUplacements[0] == char)) ||
-        ((CPUplacements[0] == CPUplacements[8]) && (CPUplacements[0] == char)) ||
-        ((CPUplacements[4] == CPUplacements[8]) && (CPUplacements[4] == char))
+        ((CPUPlacements[0] == CPUPlacements[4]) && (CPUPlacements[0] == char)) ||
+        ((CPUPlacements[0] == CPUPlacements[8]) && (CPUPlacements[0] == char)) ||
+        ((CPUPlacements[4] == CPUPlacements[8]) && (CPUPlacements[4] == char))
         ){
         for (let i = 0; i < 3; i++){
-            if (CPUplacements[i*4] == ""){
-                CPUplacements[i*4] = "A";
+            if (CPUPlacements[i*4] == ""){
+                CPUPlacements[i*4] = "A";
             }
         }
     }
     //deuxième diagonale
     if (
-        ((CPUplacements[2] == CPUplacements[4]) && (CPUplacements[2] == char)) ||
-        ((CPUplacements[2] == CPUplacements[6]) && (CPUplacements[2] == char)) ||
-        ((CPUplacements[4] == CPUplacements[6]) && (CPUplacements[4] == char)) 
+        ((CPUPlacements[2] == CPUPlacements[4]) && (CPUPlacements[2] == char)) ||
+        ((CPUPlacements[2] == CPUPlacements[6]) && (CPUPlacements[2] == char)) ||
+        ((CPUPlacements[4] == CPUPlacements[6]) && (CPUPlacements[4] == char)) 
         ){
         for (let i = 0; i < 3; i++){
-            if (CPUplacements[2+(i*2)] == ""){
-                CPUplacements[2+(i*2)] = "A";
+            if (CPUPlacements[2+(i*2)] == ""){
+                CPUPlacements[2+(i*2)] = "A";
             }
         }
     }
 
-    //petit debug (fais un console.log de la liste CPUplacements[])
-    for (let i = 0; i < CPUplacements.length; i++){
-        console.log(i + CPUplacements[i])
+    //petit debug (fais un console.log de la liste CPUPlacements[])
+    for (let i = 0; i < CPUPlacements.length; i++){
+        console.log(i + CPUPlacements[i])
     }
 }
 
-//début d'un truc que j'ai pas eu le temps de faire
+/**
+ * début d'un truc que j'ai pas eu le temps de faire
+ */
 function winCheck(){
     for (let i = 0 ; i < 3; i++){
         // check horizontally
