@@ -1,3 +1,10 @@
+//File by U731 / Nola
+//make sure to read the TOS on gumroad.
+//if you have any questions, you can join my discord server and either ask your question in the #help channel or directly in DMs to me.
+//https://discord.gg/NxMTPH6ZYV
+
+
+
 let particleCount = 0;
 let particleList = [];
 const attributes = {
