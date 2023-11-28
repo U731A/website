@@ -11,6 +11,7 @@ const elementList = [ //je déclare tous les éléments avec les 2 premiers cara
     "20Laser Tag Vest",
     "10Minecraft Armor",
     "15Overalls",
+    "00Particle System",
     "00Projector Companion",
     "08Public Avatars Textures",
     "10Regulus Harness",
