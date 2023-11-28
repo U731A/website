@@ -231,3 +231,6 @@ function winCheck(){
         // check horizontally
     }
 }
+function mailTo(){
+    window.open("mailto:alexbel.yoshi@gmail.com")
+}
