@@ -9,7 +9,7 @@ let particleCount = 0;
 let particleList = [];
 const attributes = {
     "lifeSpan"          : 100,  //in miliseconds
-    "emissionRate"      : 10,   //number of ticks inbetween each particles
+    "emissionRate"      : 100,   //number of ticks inbetween each particles
     "restartAfter"      : 100, //restart the list after [...] (will not restart the particle system, just restart the position index) if a particle is not part of the list anymore, it will not react to anything. it will continue moving, but without collisions or interactions.
 
 //-----------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ const attributes = {
     //definitive properties
 
     "velocityX"             : 5,    //0 for none (starting velocity)
-    "velocityY"             : -2,    //0 for none (starting velocity)
+    "velocityY"             : 0,    //0 for none (starting velocity)
 
     "gravityStrength"       : 0,    //0 for none
     "maxGravitySpeed"       : 0,    //0 for none
@@ -73,7 +73,7 @@ const attributes = {
 
     //randomness
     "randomStartingVelocityX": 0,    //0 for none
-    "randomStartingVelocityY": 4,    //0 for none
+    "randomStartingVelocityY": 0,    //0 for none
     "randomStartingRotation": 0,   //in degrees (0 to 360)
     "randomRotationSpeed"   : 0,     //0 for none
     "randomSize"            : 0,     //0 for none
@@ -96,7 +96,7 @@ const attributes = {
 
     //colliders
     "colliders" : document.getElementsByClassName("collider"), //must be an array
-    "bounce"    : 1, //0 for none
+    "bounce"    : 0, //0 for none
 
     //note that each particles are part of the class "particle"
     //DO NOT display:none; your colliders. Completely remove them if you want to disable them. using a display none breaks the collision checks.
@@ -124,8 +124,8 @@ class Particle{
         this.startPosX = getPosition(attributes.particleHolder)[0];
         this.startPosY = getPosition(attributes.particleHolder)[1];
 
-        this.velocityX = attributes.velocityX + Math.floor(Math.random()*attributes.randomStartingVelocityX*100)/100;
-        this.velocityY = attributes.velocityY + Math.floor(Math.random()*attributes.randomStartingVelocityY*100)/100;
+        this.velocityX = attributes.velocityX + Math.floor(Math.random()*attributes.randomStartingVelocityX);
+        this.velocityY = attributes.velocityY + Math.floor(Math.random()*attributes.randomStartingVelocityY);
 
         this.sinXA = attributes.sinXA + Math.floor(Math.random()*attributes.randomSinXA*100)/100;
         this.sinXB = attributes.sinXB + Math.floor(Math.random()*attributes.randomSinXB*100)/100;
@@ -147,15 +147,15 @@ class Particle{
 
         //specs
         let newParticle = document.createElement("img");
-        newParticle.setAttribute("class", "ennemy");
-        document.getElementById("ennemy-holder").appendChild(newParticle);
+        newParticle.setAttribute("src", attributes.imageDir[Math.floor(Math.random()*attributes.imageDir.length)]);
+        newParticle.setAttribute("onClick", "clicked("+ this.index +")");
 
         // style
         newParticle.style.position = "absolute";
         newParticle.style.margin = "0px";
         newParticle.style.display = "none";
         newParticle.style.width =  this.size + "px";
-        
+        newParticle.className = "particle";
 
         this.element = newParticle;
         
@@ -168,7 +168,7 @@ class Particle{
     applyVelocity(iteration){
 
         for (let i = 0; i < attributes.colliders.length; i++){
-            this.feelCollisions(i);
+            this.feelCollisions(attributes.colliders[i]);
         }
         
 
@@ -278,32 +278,69 @@ class Particle{
         }, 10);
 
     }
-    feelCollisions(index){
-
-        let collider = attributes.colliders[index];
+    feelCollisions(collider){
 
         //bounds
         let particle = getBounds(this.element);
         let box = getBounds(collider);
 
-        //collider properties
-        let measures = {
-            "rotate" : collider.style.rotate,//.substring(0, collider.style.getPropertyValue("rotate").length - 1)
-            "rotateL": collider.style.getPropertyValue("rotation").length,
-        }
-
-        console.log("rotate : " + collider.style.getPropertyValue("rotate"))
-        this.element.style.getPropertyValue
         let bottom = false;
-        this.element.style.getPropertyValue("");
 
         if (box != particle)
         {
-            //right
-            if (true)//first check
+
+        let heightMid = (box[1][1]-box[1][0])/2 + box[1][0];
+
+        //right
+        if (particle[0][1] >= box[0][0] && particle[0][1] <= box[0][1])//check if right bound is touching cube
+        {
+
+            if (particle[1][0] <= box[1][1] && particle[1][1] >= box[1][0])//check if cube is fine on the Y axis
             {
-                //get corner position
+                if (this.velocityX > 0)//check if velocity is in the right direction
+                {
+                    this.velocityX = this.velocityX*-1*attributes.bounce;
+                }
             }
+        }
+
+        //left
+        if (particle[0][0] >= box[0][0] && particle[0][0] <= box[0][1])//check if right bound is touching cube
+        {
+
+            if (particle[1][0] <= box[1][1] && particle[1][1] >= box[1][0])//check if cube is fine on the Y axis
+            {
+                if (this.velocityX < 0)//check if velocity is in the right direction
+                {
+                    this.velocityX = this.velocityX*-1*attributes.bounce;
+                }
+            }
+        }
+
+        //bottom
+        if (particle[1][1] >= box[1][0] && particle[1][1] <= box[1][1])//check if right bound is touching cube
+        {
+            if (particle[0][0] <= box[0][1] && particle[0][1] >= box[0][0])//check if cube is fine on the X axis
+            {
+                if (this.velocityY > 0)//check if velocity is in the right direction
+                {
+                    this.velocityY = this.velocityY*-1*attributes.bounce;
+                    bottom = true;
+                }
+            }
+        }
+
+        //top
+        if (particle[1][0] <= box[1][1] && particle[1][0] >= box[1][0])//check if right bound is touching cube
+        {
+            if (particle[0][0] <= box[0][1] && particle[0][1] >= box[0][0])//check if cube is fine on the X axis
+            {
+                if (this.velocityY < 0)//check if velocity is in the right direction
+                {
+                    this.velocityY = this.velocityY*-1*attributes.bounce;
+                }
+            }
+        }
         }
         
         return bottom;
