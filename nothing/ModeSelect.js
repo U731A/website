@@ -5,6 +5,7 @@ let mode = 0;
 let clock = 0;
 let timer = 0;
 let isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
+let mouseIn = false;
 
 let gameState = 0;
 let mousePosition = [0,0];
@@ -38,15 +39,27 @@ document.onkeydown = function(key){
 document.onmousemove = function(){
     ChangeText("cursorMove");
 }
-document.onblur = function(){
+document.onfocusout = function(){
     ChangeText("windowBlur");
+}
+document.onmouseleave = function(){
+    mouseIn = false;
+}
+document.onmouseenter = function(){
+    mouseIn = true;
 }
 function ChangeText(key){
     if (gameState == 1){
         if (key.keyCode == 13){
-            gameState = 2;
-            gameText.innerText = "You are doing nothing.";
-            timer = 0;
+            if (mouseIn){
+                gameState = 2;
+                gameText.innerText = "You are doing nothing.";
+                timer = 0;
+            }
+            else{
+                alert("Your cursor must be in the website!");
+            }
+            
         }
         else if(isMobile){
             gameState = 2;
