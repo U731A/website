@@ -2,6 +2,7 @@ let menu = document.getElementById("div-main");
 let game = document.getElementById("game");
 let gameText = document.getElementById("game-text");
 let mode = 0;
+let clock = 0;
 let timer = 0;
 let isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
 
@@ -37,19 +38,20 @@ document.onkeydown = function(key){
 document.onmousemove = function(){
     ChangeText("cursorMove");
 }
+document.onblur = function(){
+    ChangeText("windowBlur");
+}
 function ChangeText(key){
     if (gameState == 1){
         if (key.keyCode == 13){
             gameState = 2;
             gameText.innerText = "You are doing nothing.";
             timer = 0;
-            PlayTimer();
         }
         else if(isMobile){
             gameState = 2;
             gameText.innerText = "You are doing nothing.";
             timer = 0;
-            PlayTimer();
         }
     }
     else if (gameState == 2){
@@ -58,20 +60,26 @@ function ChangeText(key){
 
         if (mode == 2){
             gameText.innerText += " You did nothing for " + timer + " seconds.";
+            alert("your score : " + timer + " seconds")
         }
     }
 }
 function PlayTimer(){
+    if (gameState == 2){
+        timer++;
+        if (mode == 2){
+            gameText.innerText = "You've been doing nothing for " + timer + " seconds.";
+        }
+    }
+    else{
+        //zen mode
+    }
+}
+GameClock();
+function GameClock(){
     let interval = setInterval(function () {
-        if (gameState == 2){
-            timer++;
-            if (mode == 2){
-                gameText.innerText = "You've been doing nothing for " + timer + " seconds.";
-            }
-        }
-        else{
-            interval = clearInterval();
-        }
+        PlayTimer();
+        clock++;
             
     }, 1000);
 }
