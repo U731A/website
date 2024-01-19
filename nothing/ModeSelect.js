@@ -1,17 +1,25 @@
 let menu = document.getElementById("div-main");
 let game = document.getElementById("game");
+let profile = document.getElementById("profile")
 let gameText = document.getElementById("game-text");
 let mode = 0;
 let clock = 0;
 let timer = 0;
 let isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
 let mouseIn = false;
-
 let gameState = 0;
-let mousePosition = [0,0];
+
+//stats
+let stats = {
+    "highScore"     : 0,
+    "attempts"      : 0,
+    "latestScore"   : 0
+}
+
 function Play(input){
     menu.style.display = "none";
     game.style.display = "block";
+    profile.style.display = "none";
     gameState = 1;
     mode = input;
     
@@ -73,6 +81,11 @@ function ChangeText(key){
 
         if (mode == 2){
             gameText.innerText += " You did nothing for " + timer + " seconds.";
+            stats.latestScore = timer;
+            if (timer > stats.highScore){
+                stats.highScore = timer;
+            }
+            stats.attempts++;
             alert("your score : " + timer + " seconds")
         }
     }
@@ -97,5 +110,29 @@ function GameClock(){
     }, 1000);
 }
 function OpenProfile(){
+    menu.style.display = "none";
+    game.style.display = "none";
+    profile.style.display = "block";
 
+    //Reload stats
+    let element = document.createElement("h3");
+    element.className = "profile-stat";
+    element.innerHTML = "High score : " + stats.highScore;
+    profile.appendChild(element);
+
+    element = document.createElement("h3");
+    element.className = "profile-stat";
+    element.innerHTML = "Latest score : " + stats.latestScore;
+    profile.appendChild(element);
+
+    element = document.createElement("h3");
+    element.className = "profile-stat";
+    element.innerHTML = "Attempts : " + stats.attempts;
+    profile.appendChild(element);
+}
+function GoToMain(){
+    menu.style.display = "flex";
+    game.style.display = "none";
+    profile.style.display = "none";
+    gameState = 0;
 }
