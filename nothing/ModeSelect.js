@@ -13,7 +13,8 @@ let gameState = 0;
 let stats = {
     "highScore"     : 0,
     "attempts"      : 0,
-    "latestScore"   : 0
+    "latestScore"   : 0,
+    "totalTime"     : 0
 }
 
 function Play(input){
@@ -88,6 +89,8 @@ function ChangeText(key){
             stats.attempts++;
             alert("your score : " + timer + " seconds")
         }
+
+        stats.totalTime += timer;
     }
 }
 function PlayTimer(){
@@ -128,6 +131,11 @@ function OpenProfile(){
     element = document.createElement("h3");
     element.className = "profile-stat";
     element.innerHTML = "Attempts : " + stats.attempts;
+    profile.appendChild(element);
+
+    element = document.createElement("h3");
+    element.className = "profile-stat";
+    element.innerHTML = "Total time spent doing nothing : " + stats.totalTime;
     profile.appendChild(element);
 }
 function GoToMain(){
