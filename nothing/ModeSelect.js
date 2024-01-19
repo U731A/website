@@ -88,7 +88,6 @@ function ChangeText(key){
                 stats.highScore = timer;
             }
             stats.attempts++;
-            alert("your score : " + timer + " seconds")
         }
 
         stats.totalTime += timer;
