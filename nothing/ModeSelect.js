@@ -154,3 +154,32 @@ function GoToMain(){
 function Validate(){
     alert("Validation... Highest score : " + stats.highScore);
 }
+function OpenSaveMenu(){
+    let saveMenu = document.getElementById("save");
+    saveMenu.style.display = "flex";
+}
+// --------------------------------------------------------------SAVE SYSTEM-------------------------------------
+function GenerateSave(){
+    //prompt("this is your save, copy it and keep it.", "heehee");
+    let statsHEX = [
+        stats.highScore.toString(16),
+        stats.attempts.toString(16),
+        stats.latestScore.toString(16),
+        stats.totalTime.toString(16),
+    ]
+    let saveFile = "";
+    for (let i = 0; i < statsHEX.length; i++){
+        if (!(statsHEX[i] == 0)){
+            saveFile += statsHEX[i] + "g" + i;
+        }
+    }
+    if (saveFile == ""){
+        saveFile = "you have done nothing. Truly. Congrats."
+    }
+    prompt("this is your save, copy it and keep it.", saveFile);
+}
+function CloseSave(){
+    let saveMenu = document.getElementById("save");
+    saveMenu.style.display = "none";
+}
+//----------------------------------------------------------------SAVE SYSTEM END---------------------------------

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="ModeSelect.css">
     <script defer src="ModeSelect.js"></script>
 </head>
-<body>
+<body oncontextmenu="javascript:return false;">
     <h1 id="home" onclick="GoToMain()" oncontextmenu="javascript:return false;">M</h1>
     <div id="div-main">
         <h1>Welcome to nothing.</h1>
@@ -19,6 +19,7 @@
             <h2 onclick="Play(1)">Casual</h2>
             <h2 onclick="Play(2)">Competitive</h2>
             <h2 onclick="OpenProfile()">Profile</h2>
+            <h2 onclick="OpenSaveMenu()">save/load</h2>
         </div>
     </div>
     <div id="game" onclick="changeText('click')" oncontextmenu="javascript:return false;">
@@ -27,6 +28,14 @@
     <div id="profile">
         <h1>profile</h1>
         <h3 id="validate" onclick="Validate()">Validate highscore</h3>
+    </div>
+    <div id="save">
+        <h2 id="save-X" onclick="CloseSave()">X</h2>
+        <div id="save-div">
+            <h3 id="gen-save" onclick="GenerateSave()">Generate save</h3>
+            <h3 id="load-save-text">load save</h3>
+            <input type="text" id="load-save-input">
+        </div>
     </div>
 </body>
 </html>

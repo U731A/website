@@ -81,3 +81,47 @@
     justify-self: center;
     cursor: pointer;
 }
+/* -----------------------------SAVE---------------------------- */
+#save{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    height: 25vh;
+    width: 50vw;
+    position: absolute;
+    top: 37.5vh;
+    left: 25vw;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+#save-X{
+    align-self: flex-end;
+    margin-right: 3vw;
+    cursor:pointer;
+
+}
+#save-div{
+    margin-top: -6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#gen-save, #load-save-text{
+    margin: 1vh;
+    padding: 1vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    border: 2px solid white;
+    text-align: center;
+    cursor: pointer;
+    width: 60%;
+
+    transition: all;
+    transition-duration: 500ms;
+}
+#gen-save:hover, #load-save-text:hover{
+    box-shadow: 0px 0px 5px rgb(255, 171, 171);
+    border: 2px solid rgb(255, 171, 171);
+}
