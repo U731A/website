@@ -3,6 +3,7 @@ let game = document.getElementById("game");
 let gameText = document.getElementById("game-text");
 let mode = 0;
 let timer = 0;
+let isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
 
 let gameState = 0;
 let mousePosition = [0,0];
@@ -19,24 +20,36 @@ function Play(input){
     }
     if (mode == 1){
         gameText.innerText = "Casual mode. Press ENTER to start doing nothing"
+        if (isMobile){
+            gameText.innerText = "Casual mode. Tap to start doing nothing"
+        }
     }
     if (mode == 2){
         gameText.innerText = "Competitive mode. Press ENTER to start doing nothing"
+        if (isMobile){
+            gameText.innerText = "Competitive mode. Tap to start doing nothing"
+        }
     }
 }
 document.onkeydown = function(key){
-    changeText(key);
+    ChangeText(key);
 }
 document.onmousemove = function(){
-    changeText("cursorMove");
+    ChangeText("cursorMove");
 }
-function changeText(key){
+function ChangeText(key){
     if (gameState == 1){
         if (key.keyCode == 13){
             gameState = 2;
             gameText.innerText = "You are doing nothing.";
             timer = 0;
-            playTimer();
+            PlayTimer();
+        }
+        else if(isMobile){
+            gameState = 2;
+            gameText.innerText = "You are doing nothing.";
+            timer = 0;
+            PlayTimer();
         }
     }
     else if (gameState == 2){
@@ -48,7 +61,7 @@ function changeText(key){
         }
     }
 }
-function playTimer(){
+function PlayTimer(){
     let interval = setInterval(function () {
         if (gameState == 2){
             timer++;
@@ -61,4 +74,7 @@ function playTimer(){
         }
             
     }, 1000);
+}
+function OpenProfile(){
+
 }
