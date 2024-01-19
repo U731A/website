@@ -115,7 +115,7 @@ function GameClock(){
 function OpenProfile(){
     menu.style.display = "none";
     game.style.display = "none";
-    profile.style.display = "block";
+    profile.style.display = "flex";
 
     //delete old h3s
     let elements = document.querySelectorAll(".profile-stat");
@@ -149,4 +149,7 @@ function GoToMain(){
     game.style.display = "none";
     profile.style.display = "none";
     gameState = 0;
+}
+function Validate(){
+    alert("Validation... Highest score : " + stats.highScore);
 }
