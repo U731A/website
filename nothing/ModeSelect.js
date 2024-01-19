@@ -117,6 +117,12 @@ function OpenProfile(){
     game.style.display = "none";
     profile.style.display = "block";
 
+    //delete old h3s
+    let elements = document.querySelectorAll(".profile-stat");
+    for (let i = 0; i < elements.length; i++){
+        elements[i].remove();
+    }
+
     //Reload stats
     let element = document.createElement("h3");
     element.className = "profile-stat";
