@@ -57,6 +57,7 @@ document.onmouseleave = function(){
 document.onmouseenter = function(){
     mouseIn = true;
 }
+
 function ChangeText(key){
     if (gameState == 1){
         if (key.keyCode == 13){
