@@ -19,7 +19,7 @@
             <h2 onclick="Play(1)">Casual</h2>
             <h2 onclick="Play(2)">Competitive</h2>
             <h2 onclick="OpenProfile()">Profile</h2>
-            <!-- <h2 onclick="OpenSaveMenu()">save/load</h2> -->
+            <h2 onclick="OpenSaveMenu()">save/load</h2>
         </div>
     </div>
     <div id="game" onclick="ChangeText('click')" oncontextmenu="javascript:return false;">
@@ -33,7 +33,7 @@
         <h2 id="save-X" onclick="CloseSave()">X</h2>
         <div id="save-div">
             <h3 id="gen-save" onclick="GenerateSave()">Generate save</h3>
-            <h3 id="load-save-text">load save</h3>
+            <h3 id="load-save-text" onclick="LoadSave()">load save</h3>
             <input type="text" id="load-save-input">
         </div>
     </div>

@@ -12,8 +12,8 @@ let gameState = 0;
 //stats
 let stats = {
     "highScore"     : 0,
-    "attempts"      : 0,
     "latestScore"   : 0,
+    "attempts"      : 0,
     "totalTime"     : 0
 }
 
@@ -160,22 +160,96 @@ function OpenSaveMenu(){
 // --------------------------------------------------------------SAVE SYSTEM-------------------------------------
 function GenerateSave(){
     //prompt("this is your save, copy it and keep it.", "heehee");
+    let randomBase = Math.floor(Math.random()*30+2);
     let statsHEX = [
-        stats.highScore.toString(16),
-        stats.attempts.toString(16),
-        stats.latestScore.toString(16),
-        stats.totalTime.toString(16),
+        stats.highScore.toString(randomBase),
+        stats.latestScore.toString(randomBase),
+        stats.attempts.toString(randomBase),
+        stats.totalTime.toString(randomBase),
     ]
     let saveFile = "";
     for (let i = 0; i < statsHEX.length; i++){
         if (!(statsHEX[i] == 0)){
-            saveFile += statsHEX[i] + "g" + i;
+            saveFile += statsHEX[i] + "g" + (i.toString().substring(0, 1));
         }
+    }
+
+    if (randomBase.toString(16).length != 2){
+        randomBase = "0" + randomBase.toString(16);
+    }
+    else{
+        randomBase = randomBase.toString(16);
     }
     if (saveFile == ""){
         saveFile = "you have done nothing. Truly. Congrats."
     }
+    else{
+        saveFile = (randomBase + "l" + saveFile + "sz" + saveFile + "12m2k2j" + saveFile);
+    }
     prompt("this is your save, copy it and keep it.", saveFile);
+}
+function LoadSave(){
+    let saveData = document.getElementById("load-save-input").value;
+    let index = -1;
+    let invalid = true;
+
+    //remove unnecessary data
+    for (let i = 0; i < saveData.length; i++){
+        if (saveData.substring(i, i+2) == "sz"){
+            index = i;
+            invalid = false;
+        }
+    }
+
+    if (index == -1){
+        alert("this code is invalid");
+    }
+    else{
+
+        saveData = saveData.substring(0, index);
+    }
+
+    let key = parseInt(saveData.substring(0,2), 16);
+    saveData = saveData.substring(3);
+
+    //deconstruct string
+    let temporaryListHex = [];
+    let temporaryIndex = -1;
+    while ((saveData.length != 0) && !invalid){
+        temporaryIndex++;
+        let running = true;
+        let index = 0;
+
+        //find where first one ends
+        while (running && !invalid){
+            if (saveData[index] == "g"){
+                running = false;
+            }
+            else if (index == saveData.length){
+                alert("invalid save code.");
+                invalid = true;
+            }
+            index++;
+        }
+
+        temporaryString = saveData.substring(0, index-1);
+        temporaryListHex[temporaryIndex] = parseInt(temporaryString, key);
+
+        saveData = saveData.substring(index+1);
+
+        
+
+    }
+    if (!invalid){
+        alert("successfully loaded save!");
+        for (let i = 0; i < temporaryListHex.length; i++){
+            if (i == 0){ stats.highScore = temporaryListHex[i];}
+            else if (i == 1){ stats.latestScore = temporaryListHex[i];}
+            else if (i == 2){ stats.attempts = temporaryListHex[i];}
+            else if (i == 3){ stats.totalTime = temporaryListHex[i];}
+        }
+    }
+    
 }
 function CloseSave(){
     let saveMenu = document.getElementById("save");
