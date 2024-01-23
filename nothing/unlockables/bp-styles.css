@@ -1,0 +1,277 @@
+/* DEFAULT */
+.level-square.f0, .g0{
+    color:white;
+    background-color: black;
+    --theme: white;
+    --theme-hover: rgb(255, 171, 171);
+}
+
+/* basic skins*/
+.level-square.f1, .g1{
+    color:rgb(248, 132, 132);
+    background-color: black;
+    --theme: white;
+    --theme-hover: rgb(197, 75, 75);
+}
+.level-square.f2, .g2{
+    color:rgb(173, 248, 132);
+    background-color: black;
+    --theme: white;
+    --theme-hover: rgb(110, 177, 133);
+}
+.level-square.f3, .g3{
+    color:rgb(248, 206, 132);
+    background-color: black;
+    --theme: white;
+    --theme-hover: rgb(255, 168, 82);
+}
+.level-square.f4, .g4{
+    color:rgb(132, 198, 248);
+    background-color: black;
+    --theme: white;
+    --theme-hover: rgb(90, 75, 187);
+}
+.level-square.f5, .g5{
+    color:rgb(248, 132, 221);
+    background-color: black;
+    --theme: white;
+    --theme-hover: rgb(142, 69, 175);
+}
+
+
+
+.level-square.f6, .g6{
+    color:rgb(248, 132, 132);
+    background-color: rgb(91, 42, 42);
+    --theme: rgb(200, 149, 149);
+    --theme-hover: rgb(255, 171, 171);
+}
+.level-square.f7, .g7{
+    color:rgb(173, 248, 132);
+    background-color: rgb(91, 42, 42);
+    --theme: rgb(200, 149, 149);
+    --theme-hover: rgb(255, 171, 171);
+}
+.level-square.f8, .g8{
+    color:rgb(248, 206, 132);
+    background-color: rgb(91, 42, 42);
+    --theme: rgb(200, 149, 149);
+    --theme-hover: rgb(255, 171, 171);
+}
+.level-square.f9, .g9{
+    color:rgb(132, 198, 248);
+    background-color: rgb(91, 42, 42);
+    --theme: rgb(200, 149, 149);
+    --theme-hover: rgb(255, 171, 171);
+}
+.level-square.f10, .g10{
+    color:rgb(248, 132, 221);
+    background-color: rgb(91, 42, 42);
+    --theme: rgb(200, 149, 149);
+    --theme-hover: rgb(255, 171, 171);
+}
+
+
+
+.level-square.f11, .g11{
+    color:rgb(248, 132, 132);
+    background-color: rgb(255, 255, 255);
+    --theme: rgb(187, 187, 187);
+    --theme-hover: rgb(125, 125, 125);
+}
+.level-square.f12, .g12{
+    color:rgb(173, 248, 132);
+    background-color: rgb(255, 255, 255);
+    --theme: rgb(187, 187, 187);
+    --theme-hover: rgb(125, 125, 125);
+}
+.level-square.f13, .g13{
+    color:rgb(248, 206, 132);
+    background-color: rgb(255, 255, 255);
+    --theme: rgb(187, 187, 187);
+    --theme-hover: rgb(125, 125, 125);
+}
+.level-square.f14, .g14{
+    color:rgb(132, 198, 248);
+    background-color: rgb(255, 255, 255);
+    --theme: rgb(187, 187, 187);
+    --theme-hover: rgb(125, 125, 125);
+}
+.level-square.f15, .g15{
+    color:rgb(248, 132, 221);
+    background-color: rgb(255, 255, 255);
+    --theme: rgb(187, 187, 187);
+    --theme-hover: rgb(125, 125, 125);
+}
+.level-square.f16, .g16{
+    color:rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    --theme: rgb(187, 187, 187);
+    --theme-hover: rgb(125, 125, 125);
+}
+
+
+
+/* interesting designs */
+.level-square.f17, .g17{
+    color:rgb(57, 31, 51);
+    background-color: rgb(121, 78, 78);
+    --theme: rgb(72, 40, 82);
+    --theme-hover: rgb(59, 26, 77);
+}
+.level-square.f18, .g18{
+    color:rgb(98, 43, 81);
+    background-color: rgb(36, 4, 44);
+    --theme: rgb(36, 4, 44);
+    --theme-hover: rgb(110, 57, 139);
+}
+.level-square.f19, .g19{
+    color:rgb(0, 255, 47);
+    background-color: rgb(36, 4, 44);
+    --theme: rgb(25, 2, 30);
+    --theme-hover: rgb(110, 57, 139);
+}
+.level-square.f20, .g20{
+    color:rgb(169, 185, 239);
+    background-color: rgb(47, 120, 110);
+    --theme: rgb(212, 209, 127);
+    --theme-hover: rgb(239, 236, 149);
+}
+.level-square.f21, .g21{
+    color:rgb(48, 51, 61);
+    background-color: rgb(144, 195, 188);
+    --theme: rgb(78, 140, 161);
+    --theme-hover: rgb(48, 119, 144);
+}
+.level-square.f22, .g22{
+    color:rgb(255, 234, 165);
+    background-color: rgb(47, 120, 110);
+    --theme: rgb(177, 154, 76);
+    --theme-hover: rgb(149, 239, 191);
+}
+.level-square.f23, .g23{
+    color:rgb(169, 185, 239);
+    background-color: rgb(47, 120, 110);
+    --theme: rgb(212, 209, 127);
+    --theme-hover: rgb(239, 236, 149);
+}
+.level-square.f24, .g24{
+    color:rgb(255, 168, 76);
+    background-color: rgb(36, 16, 0);
+    --theme: rgb(255, 230, 141);
+    --theme-hover: rgb(255, 244, 157);
+}
+.level-square.f25, .g25{
+    color:rgb(50, 50, 50);
+    background-color: rgb(0, 0, 0);
+    --theme: rgb(58, 58, 58);
+    --theme-hover: rgb(59, 59, 59);
+}
+
+
+
+/* Blinking skins */
+:root{
+    --blink0: white;
+    --blink1: red;
+}
+@keyframes blink-text{
+    0%{
+        color: var(--blink0);
+    }
+    50%{
+        color: var(--blink1);
+    }
+    100%{
+        color: var(--blink0);
+    }
+}
+.level-square.f26, .g26{
+    --blink0: rgb(32, 32, 32);
+    --blink1: rgb(162, 0, 0);
+    animation: blink-text 3s linear 0s infinite forwards;
+    background-color: rgb(0, 0, 0);
+    --theme: rgb(34, 34, 34);
+    --theme-hover: rgb(59, 59, 59);
+}
+.level-square.f27, .g27{
+    --blink0: rgb(255, 178, 178);
+    --blink1: rgb(255, 67, 130);
+    animation: blink-text 3s linear 0s infinite forwards;
+    background-color: rgb(255, 234, 234);
+    --theme: rgb(255, 161, 197);
+    --theme-hover: rgb(219, 142, 186);
+}
+.level-square.f27, .g27{
+    --blink0: rgb(255, 68, 0);
+    --blink1: rgb(255, 220, 92);
+    animation: blink-text 3s linear 0s infinite forwards;
+    background-color: rgb(23, 0, 0);
+    --theme: rgb(94, 43, 24);
+    --theme-hover: rgb(67, 67, 67);
+}
+
+
+
+
+/* basic background colors */
+
+/* Other */
+.level-square.f69, .g69{
+    animation: rainbow-text 3s linear 0s infinite forwards;
+    background-color: black;
+    --theme: white;
+    --theme-hover: rgb(255, 171, 171);
+}
+@keyframes rainbow-text{
+    0%{
+        color: rgb(255, 103, 103);
+    }
+    20%{
+        color: rgb(255, 255, 107);
+    }
+    40%{
+        color: rgb(137, 255, 137);
+    }
+    60%{
+        color: rgb(105, 105, 255);
+    }
+    80%{
+        color: rgb(255, 157, 255);
+    }
+    100%{
+        color: rgb(255, 103, 103);
+    }
+}
+.level-square.f96, .g96{
+    animation: rainbow-bg 3s linear 0s infinite forwards;
+    background-color: black;
+    --theme: white;
+    --theme-hover: rgb(255, 171, 171);
+}
+@keyframes rainbow-bg{
+    0%{
+        background-color: rgb(255, 103, 103);
+    }
+    20%{
+        background-color: rgb(255, 255, 107);
+    }
+    40%{
+        background-color: rgb(137, 255, 137);
+    }
+    60%{
+        background-color: rgb(105, 105, 255);
+    }
+    80%{
+        background-color: rgb(255, 157, 255);
+    }
+    100%{
+        background-color: rgb(255, 103, 103);
+    }
+}
+.level-square.f100, .g100{
+    animation: rainbow-text 3s linear 0s infinite forwards;
+    background-image: linear-gradient(to right,rgb(255, 103, 103),rgb(255, 255, 107),rgb(137, 255, 137),rgb(105, 105, 255),rgb(255, 157, 255));
+    --theme: rgb(255, 255, 255);
+    --theme-hover: rgb(212, 212, 212);
+}

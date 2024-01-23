@@ -6,20 +6,30 @@
     <title>Nothing.</title>
     <link rel="shortcut icon" href="../Assets/flower merge.png">
     <link rel="stylesheet" href="ModeSelect.css">
+    <link rel="stylesheet" href="unlockables/bp-styles.css">
     <script defer src="ModeSelect.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
+    <!-- /fonts -->
 </head>
 <body oncontextmenu="javascript:return false;">
     <h1 id="home" onclick="GoToMain()" oncontextmenu="javascript:return false;">M</h1>
     <div id="div-main">
         <h1>Welcome to nothing.</h1>
         <h3>please don't do anything.</h3>
-        <p>version 2</p>
+        <p>version a2.01</p>
         <div id="div-buttons">
             <h2 onclick="Play(0)">Zen</h2>
             <h2 onclick="Play(1)">Casual</h2>
             <h2 onclick="Play(2)">Competitive</h2>
             <h2 onclick="OpenProfile()">Profile</h2>
             <h2 onclick="OpenSaveMenu()">save/load</h2>
+            <h2 onclick="OpenBattlePass()">Battle Pass (WIP)</h2>
         </div>
     </div>
     <div id="game" onclick="ChangeText('click')" oncontextmenu="javascript:return false;">
@@ -35,6 +45,14 @@
             <h3 id="gen-save" onclick="GenerateSave()">Generate save</h3>
             <h3 id="load-save-text" onclick="LoadSave()">load save</h3>
             <input type="text" id="load-save-input">
+        </div>
+    </div>
+    <div id="battle-pass">
+        <h1>THIS IS THE BATTLE PASS</h1>
+        <div id="bp-border">
+            <div id="bp-bounds">
+
+            </div>
         </div>
     </div>
 </body>

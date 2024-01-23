@@ -1,6 +1,7 @@
 let menu = document.getElementById("div-main");
 let game = document.getElementById("game");
-let profile = document.getElementById("profile")
+let profile = document.getElementById("profile");
+let battlePass = document.getElementById("battle-pass");
 let gameText = document.getElementById("game-text");
 let mode = 0;
 let clock = 0;
@@ -21,6 +22,7 @@ function Play(input){
     menu.style.display = "none";
     game.style.display = "block";
     profile.style.display = "none";
+    battlePass.style.display = "none";
     gameState = 1;
     mode = input;
     
@@ -116,6 +118,7 @@ function OpenProfile(){
     menu.style.display = "none";
     game.style.display = "none";
     profile.style.display = "flex";
+    battlePass.style.display = "none";
 
     //delete old h3s
     let elements = document.querySelectorAll(".profile-stat");
@@ -148,6 +151,8 @@ function GoToMain(){
     menu.style.display = "flex";
     game.style.display = "none";
     profile.style.display = "none";
+    battlePass.style.display = "none";
+
     gameState = 0;
 }
 function Validate(){
@@ -156,6 +161,35 @@ function Validate(){
 function OpenSaveMenu(){
     let saveMenu = document.getElementById("save");
     saveMenu.style.display = "flex";
+}
+function OpenBattlePass() {
+    menu.style.display = "none";
+    game.style.display = "none";
+    profile.style.display = "none";
+    battlePass.style.display = "block";
+}
+//init battlepass
+for (let i = 0; i <= 500; i++){
+    let level = document.createElement("div");
+    level.innerHTML = 
+    '<h1 class="level-text f'+ i +'">' + i + '</h1>'+
+    '<div onclick="UpdateSkins(' + i + ')" class="level-square f'+ i +'">' + 'Joy</div>'
+
+    level.className = "level f" + i;
+    document.getElementById("bp-bounds").appendChild(level)
+}
+function UpdateSkins(index){
+    let elements = document.querySelectorAll("*");
+
+    for (let i = 0; i < document.getElementsByClassName("level").length; i++){
+        for (let j = 0; j < elements.length; j++){
+            elements[j].classList.remove("g"+ i);
+        }
+    }
+
+    for (let i = 0; i < elements.length; i++){
+        elements[i].classList.add("g"+ index);
+    }
 }
 // --------------------------------------------------------------SAVE SYSTEM-------------------------------------
 function GenerateSave(){

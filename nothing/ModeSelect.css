@@ -1,12 +1,18 @@
+:root{
+    --theme: white;
+    --theme-hover: rgb(255, 171, 171);
+}
 *{
+    
     color: white;
     background-color: black;
+    font-family: 'Comic Neue', cursive;
 }
 #home{
-    position: absolute;
+    position:fixed;
     top: 0px;
     left: 0px;
-    border: 2px solid white;
+    border: 2px solid var(--theme);
     border-radius: 5px;
     margin: 15px;
     padding: 5px;
@@ -17,8 +23,8 @@
     transition-duration: 500ms;
 }
 #home:hover{
-    box-shadow: 3px 3px 0px rgb(255, 171, 171);
-    border: 2px solid rgb(255, 171, 171);
+    box-shadow: 3px 3px 0px var(--theme-hover);
+    border: 2px solid var(--theme-hover);
 }
 /* -----------------------------MAIN---------------------------- */
 #div-main{
@@ -34,7 +40,7 @@
     padding: 1vh;
     padding-left: 3vw;
     padding-right: 3vw;
-    border: 2px solid white;
+    border: 2px solid var(--theme);
     text-align: center;
     cursor: pointer;
 
@@ -42,8 +48,8 @@
     transition-duration: 500ms;
 }
 #div-buttons *:hover{
-    box-shadow: 5px 5px 0px rgb(255, 171, 171);
-    border: 2px solid rgb(255, 171, 171);
+    box-shadow: 5px 5px 0px var(--theme-hover);
+    border: 2px solid var(--theme-hover);
 }
 /* -----------------------------GAME---------------------------- */
 #game{
@@ -74,7 +80,7 @@
     text-align: center;
 }
 #validate{
-    border: 2px solid white;
+    border: 2px solid var(--theme);
     padding: 1vh;
     width: 25vw;
     text-align: center;
@@ -93,7 +99,7 @@
     top: 37.5vh;
     left: 25vw;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid var(--theme);
     border-radius: 5px;
 }
 #save-X{
@@ -113,7 +119,7 @@
     padding: 1vh;
     padding-left: 3vw;
     padding-right: 3vw;
-    border: 2px solid white;
+    border: 2px solid var(--theme);
     text-align: center;
     cursor: pointer;
     width: 60%;
@@ -122,6 +128,41 @@
     transition-duration: 500ms;
 }
 #gen-save:hover, #load-save-text:hover{
-    box-shadow: 0px 0px 5px rgb(255, 171, 171);
-    border: 2px solid rgb(255, 171, 171);
+    box-shadow: 0px 0px 5px var(--theme-hover);
+    border: 2px solid var(--theme-hover);
+}
+/* ----------------------------------------Battle Pass------------------------------------------ */
+#battle-pass{
+    display: none;
+
+    text-align: center;
+}
+#bp-bounds{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.level{
+    width: 14vw;
+    height: 7vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--theme);
+}
+.level-square{
+    border: 2px solid var(--theme);
+    border-radius: 15px;
+    height: 7vh;
+    width: 7vh;
+    display: block;
+    margin-right: 5vw;
+    cursor: pointer;
+
+    transition: all;
+    transition-duration: 500ms;
+}
+.level-square:hover{
+    height: 8vh;
+    width: 8vh;
 }
