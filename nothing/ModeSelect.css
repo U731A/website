@@ -34,6 +34,7 @@
     align-items: center;
 }
 #div-buttons{
+    margin-top: -2vh;
 }
 #div-buttons *{
     margin: 5vh;
