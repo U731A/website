@@ -48,7 +48,7 @@ function LoadCity(cityIndex){
     currentCity = cityIndex;
 
     let deprecatedPeople = document.getElementsByClassName("person");
-    for (let i = 0; i < deprecatedPeople.length; i){
+    for (let i = 0; i < deprecatedPeople.length; i++){
         deprecatedPeople[i].remove();
         console.log(i);
     }
