@@ -6,6 +6,8 @@ let explorer = document.getElementById("city-explorer");
 function InitArchives(){
     let list = document.getElementById("archive-list");
 
+    list.innerHTML = '<h1 id="load-button" onclick="LoadSave()">Load city from text <input type="text" id="load-data"></h1>';
+
     for (let i = 0; i < cities.length; i++){
         let newCity = document.createElement("div");
         newCity.className = "city";
@@ -35,8 +37,8 @@ function GoToMain(){
     //remove old people list
     let people = document.getElementsByClassName("person");
     
-    for (let i = 0; i < people.length; i){
-        people[i].remove();
+    while (people.length != 0){
+        people[0].remove();
     }
 }
 function GoToExplorer(){
@@ -48,9 +50,8 @@ function LoadCity(cityIndex){
     currentCity = cityIndex;
 
     let deprecatedPeople = document.getElementsByClassName("person");
-    for (let i = 0; i < deprecatedPeople.length; i){
-        deprecatedPeople[i].remove();
-        console.log(i);
+    while (deprecatedPeople.length != 0){
+        deprecatedPeople[0].remove();
     }
     
 
@@ -197,4 +198,54 @@ function SaveMods(index){
     cities[currentCity].people[index].notes = document.querySelector("#f"+index+" #person-notes").value;
     
     LoadCity(0);
+}
+function GenerateSave(){
+    let save = "";
+
+    //add the city's config to the beginning of the save string
+    //Config;Config;Config
+    save = cities[currentCity].name+";"+cities[currentCity].id+";"+cities[currentCity].size+";"+cities[currentCity].population+";";
+
+    //add the profiles
+    //profile;profile;profile
+    for (let i = 0; i < cities[currentCity].profiles.length; i++){
+        save += cities[currentCity].profiles[i];
+
+        if (i+1 != cities[currentCity].profiles.length){
+            save += ";";
+        }
+    }
+
+    //add a separator
+    //pre\post
+    save += "\\";
+
+    //add profiles
+    for (let i = 0; i < cities[currentCity].population; i++){
+
+        let person = cities[currentCity].people[i];
+        //check if empty
+        let index = -1;
+        let string = "";
+        for (let key in person){
+            index++;
+            if ( key != "id" ){
+
+                //Compose the code
+                string += ";" + person[key];
+            }
+        }
+        if (string == ";;;;;;;;;;;;;;;;;;;;;;;;;;"){ string = ""; }
+        else{
+            //add to save
+            save += string;
+
+            //separator
+            save += "\\";
+        }
+
+        
+    }
+    let w = window.open("");
+    w.document.write("<title>your save file</title>" + save);
 }

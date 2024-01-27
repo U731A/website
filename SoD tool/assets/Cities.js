@@ -1,5 +1,17 @@
 const DEFAULTCITIES = [
             {
+                "name"  :   "Test City",
+                "id"    :   "beep boop.1.3605.46EqPMKX17tCms3z",
+                "size"  :   "medium",
+                "population":396,
+                "profiles": [
+                            "none",
+                            "Kamila Allen"
+                            ],
+                "people":[],
+                "saveCode": "beep boop.1.3605.46EqPMKX17tCms3z"
+            },
+            {
             "name"  :   "Beep Boop",
             "id"    :   "beep boop.1.3605.46EqPMKX17tCms3z",
             "size"  :   "medium",
@@ -10,7 +22,8 @@ const DEFAULTCITIES = [
                         ],
             "people":[
                 new Person(0)
-            ]
+            ],
+            "saveCode": "beep boop.1.3605.46EqPMKX17tCms3z"
             }
 ];
 
@@ -32,8 +45,6 @@ function InitTables(){
         cities[i] = DEFAULTCITIES[i];
         InitCitizens(i);
     }
-    cities[0].people[0].name = "john";
-    console.log("naming : " + cities[0].people[0].name)
 }
 InitTables();
 

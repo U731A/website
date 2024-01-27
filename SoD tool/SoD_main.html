@@ -13,8 +13,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
 
-    <script src="assets/Objects.js"></script>
-    <script src="assets/Cities.js"></script>
+    <script defer src="assets/Objects.js"></script>
+    <script defer src="assets/Cities.js"></script>
+    <script defer src="assets/LoadData.js"></script>
     <script defer src="SoD_main.js"></script>
     
 </head>
@@ -26,11 +27,12 @@
     <article id="main">
         <h1 id="prompt">Select an archive</h1>
         <div id="archive-list">
+            <h1 id="load-button" onclick="LoadSave()">Load city from text <input type="text" id="load-data"></h1>
         </div>
     </article>
     <div id="city-explorer">
         <div id="people-holder">
-
+            <h1 id="generate-save-button" onclick="GenerateSave()">Generate Save (WIP)</h1>
         </div>
 
     </div>

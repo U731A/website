@@ -1,7 +1,7 @@
 class Person{
     constructor(index){
         this.id =           index;
-        this.name =         "";
+        this.name =         "john";
         this.lastName =     "";
         this.picture =      "";
         this.vocalID =      "";
